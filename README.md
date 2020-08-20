@@ -29,7 +29,7 @@ Detect Text on Images.
 		url: "http://....jpg",
 		formats: ["hocr", "txt", "pdf", "tsv"],
 		contrast: 0.5,
-		lang: ["deu", "eng"]
+		lang: ["lets", "eng"]
 	}
 
 - **url**: URL to Image

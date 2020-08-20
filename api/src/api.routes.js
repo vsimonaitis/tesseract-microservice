@@ -42,7 +42,7 @@ const upload = multer({
 // =========================
 function validateOptions(fields) {
 	const options = {
-		langs: "deu",
+		langs: "lets",
 		formats: ["txt"],
 		contrast: 0.7
 	};
@@ -68,7 +68,7 @@ function validateOptions(fields) {
 	if (fields.langs && Array.isArray(fields.langs)) {
 		options.langs = fields.formats
 			.filter(lang => {
-				return ["deu", "eng"].indexOf(lang) > -1;
+				return ["lets"].indexOf(lang) > -1;
 			})
 			.join("+");
 	}

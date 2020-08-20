@@ -1,22 +1,21 @@
-FROM ubuntu:16.04
+FROM ubuntu:20.04
 
-RUN apt-get update
+RUN apt-get update && apt-get install -y apt-utils
 
 # Install Node.js
 RUN apt-get install --yes curl
-RUN curl --silent --location https://deb.nodesource.com/setup_8.x | bash -
+RUN curl --silent --location https://deb.nodesource.com/setup_12.x | bash -
 RUN apt-get install --yes nodejs
-
-RUN mkdir /app
-WORKDIR /app
 
 RUN npm install -g nodemon
 
-COPY package.json /app
+RUN mkdir /app
+COPY . /app
+WORKDIR /app
 
+RUN cd /app
 RUN npm install
 
-COPY . /app
 
 EXPOSE 3000
 

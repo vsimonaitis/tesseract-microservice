@@ -6,16 +6,14 @@ services:
       context: ./worker
       dockerfile: worker.Dockerfile
     volumes: 
-    - "./worker:/app"
     - "./data:/app/data"
   api:
     build:
       context: ./api
       dockerfile: api.Dockerfile
     volumes: 
-    - "./api:/app"
     - "./data:/app/data"
     ports:
-    - "3000:3000"
+    - "4000:3000"
   redis:
     image: redis

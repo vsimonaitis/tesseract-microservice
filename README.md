@@ -41,6 +41,6 @@ Detect Text on Images.
 
 ## POST /file
 
-	POST /file
+	`` curl -F 'file=@digital-numbers.jpg' http://localhost:4000/api/file
 
 ## MIT

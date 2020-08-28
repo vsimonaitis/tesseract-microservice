@@ -1,13 +1,18 @@
-version: "2"
-
+version: "3.3"
 services:
   worker:
+    container_name: worker
+    restart: on-failure
+    network_mode: bridge
     build:
       context: ./worker
       dockerfile: worker.Dockerfile
     volumes: 
     - "./data:/app/data"
   api:
+    container_name: api
+    restart: on-failure
+    network_mode: bridge
     build:
       context: ./api
       dockerfile: api.Dockerfile
@@ -16,4 +21,7 @@ services:
     ports:
     - "4000:3000"
   redis:
+    container_name: redis
+    restart: on-failure
+    network_mode: bridge
     image: redis
